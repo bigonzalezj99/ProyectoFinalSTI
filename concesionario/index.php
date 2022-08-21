@@ -30,21 +30,24 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 divFormLogin">
-				<div class="titleLogin"> <p>Inicio de sesión</p> </div>
-				<div class="inputsLogin">
-					<input id="inputEmail" class="form-control" type="text" placeholder="Email"><br>
-					<input id="inputPass" class="form-control" type="password" placeholder="Contraseña"><br>
-					<div class="divRestorePassword">
-						<a class="tagRestorePass" href="./restorePass.php">¿Perdió su contraseña?</a>
+				<form class="formLogin" method="post">
+					<div class="titleLogin"> <p>Inicio de sesión</p> </div>
+					<div class="inputsLogin">
+						<input id="inputEmail" name="inputEmail" class="form-control" type="text" placeholder="Email"><br>
+						<input id="inputPass" name="inputPass" class="form-control" type="password" placeholder="Contraseña"><br>
+						<div class="divRestorePassword">
+							<a class="tagRestorePass" href="./restorePass.php">¿Perdió su contraseña?</a>
+						</div>
+						<div class="divGetIntoSystem">
+							<button type="submit" id="btnGetToSystem" name="btnGetToSystem" class="btn btn-primary">Ingresar</button>
+						</div>
 					</div>
-					<div class="divGetIntoSystem">
-						<button id="btnGetToSystem" class="btn btn-primary">Ingresar</button>
-					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 
 		<script>
+			/*
 			const btnGetToSystem = document.getElementById('btnGetToSystem');
 			if(btnGetToSystem){
 				btnGetToSystem.addEventListener('click',()=>{
@@ -59,7 +62,7 @@
 						form.append('inputEmail',inputEmail.value);
 						form.append('inputPass',inputPass.value);
 
-						fetch("controllers/login/login.php", {
+						fetch("./controllers/login/login.php", {
 							method: 'POST',
 							body: form
 						})
@@ -80,7 +83,14 @@
 					}
 				});
 			}
+			*/
 		</script>
+
+		<?php
+			if(isset($_POST["btnGetToSystem"])){
+				include './controllers/login/login.php';
+			}
+		?>
 		
 	</body>
 </html>

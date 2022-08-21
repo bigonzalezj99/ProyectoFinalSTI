@@ -1,63 +1,61 @@
 <?php
-require_once 'controllers/conexion.php';
+require_once './controllers/conexion.php';
 
 $db_connection = oci_connect($db_esquema, $db_password, $db_instance);
 
 if(!$db_connection){
+	echo "Conexion sin exito a Oracol...";
 	$m = oci_error();
 	echo $m['message'], "n";
 	exit;
 }
 else{
-	echo "Conexion con exito a Oracol!";
-}
+	$email = utf8_decode($_POST["inputEmail"]);
+	$password = utf8_decode($_POST["inputPass"]);
 
+	if($email && $password){
+		echo "Conexion con exito a Oracol! ----- ".$email." ----- ".$password." ||| ";
 
+		$selectAdmin = oci_parse($db_connection, "SELECT usuario.email, usuario.password FROM usuario INNER JOIN rol ON rol.idrol = '1' AND rol.idrol = usuario.idrol WHERE usuario.email = '".$email."' AND usuario.password = '".$password."'");
+		$selectOthers = oci_parse($db_connection, "SELECT usuario.email, usuario.password FROM usuario INNER JOIN rol ON rol.idrol <> '1' AND rol.idrol = usuario.idrol WHERE usuario.email = '".$email."' AND usuario.password = '".$password."'");
 
+		$intAdmin = oci_execute($selectAdmin);
+		$intOther = oci_execute($selectOthers);
 
+		$strAdmin = oci_fetch_all($selectAdmin, $res);
+		$strAdmin = oci_fetch_all($selectOthers, $res2);
 
-/*
-$email = utf8_decode($_POST["email"]);
-$password = utf8_decode($_POST["password"]);
-
-$query = mysqli_query($db_connection, "SELECT email, password FROM clinicaproyecto_2021.usuarios WHERE email = '".$email."' AND password = '".$password."' AND id_rol ='1';");
-$resultadoL = mysqli_num_rows($query);
-
-$query2 = mysqli_query($db_connection, "SELECT email, password FROM clinicaproyecto_2021.usuarios WHERE email = '".$email."' AND password = '".$password."';");
-$resultadoLL = mysqli_num_rows($query2);
-
-if($resultadoL > 0)
-{	
-
-		session_start();
-	
+		$intIsAdmin = 0;
+		$intIsOther = 0;
 		
-		$_SESSION['administrador']="$usuario";
-		//echo "<script> alert('va a ingresar con administrador');window.location= 'index.php'</script>";
-		header("Location: views/inicio.php");
+		foreach($res["EMAIL"] AS $value){
+			$intIsAdmin = 1;
+			echo $value;
+		}
 
-		exit(); 
+		foreach($res2["EMAIL"] AS $value){
+			$intIsOther = 1;
+			echo $value;
+		}
 
-	
+		if($intIsAdmin){
+			//echo "Es webmaster";
+			session_start();
+			$_SESSION['administrador']="$usuario";
+			header("Location: views/inicio.php");
+			exit(); 
+		}
+		if($intIsOther){
+			//echo "Es otro user";
+			session_start();
+			$_SESSION['usuario']="$usuario";
+			header("Location: views/inicio.php");
+			exit();
+		}
+
+		echo "<script> alert('Usuario no existe'); window.location= 'index.php'</script>";
+	}
 }
 
-if($resultadoLL > 0)
-{	
-
-		session_start();
-	
-		$_SESSION['usuario']="$usuario";
-		//echo "<script> alert('va a ingresar con usuario');window.location= 'index.php'</script>";
-		
-		header("Location: views/inicio.php");
-		exit(); 
-
-
-}
-else
-{
-	echo "<script> alert('Usuario no existe');window.location= 'index.php'</script>";
-}
-*/
-
+oci_close($db_connection);
 ?>

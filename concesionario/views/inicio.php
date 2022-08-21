@@ -1,41 +1,34 @@
-  <?php
-
-//abrimos la sesión
+<?php
+//Open session
 session_start();
  
-//Si la variable sesión está vacía
+//If NO webmaster -->  No Total control
 if (!isset($_SESSION['administrador'])) 
-{ 
-  
-
-    if (!isset($_SESSION['usuario'])) 
-        { 
-            /* nos envía a la siguiente dirección en el caso de no poseer autorización */
-            header("location:../index.php"); 
+{
+    // If NO other user --> 
+    if (!isset($_SESSION['usuario'])){
+        /* Si no se posee autorización, nos envía de regreso */
+        header("location:../index.php"); 
 
     }
 
 }
-
-
 ?>
+
 <head>
     <title>Inicio</title>
-    <link rel="icon" type="image/png" href="imgs\inicio.png" />
-    <!-- Required meta tags -->
+    <link rel="icon" type="image/png" href="../imgs/inicio.png"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body background="../imgs/fondoUsuarios.jpg" style="background-size: cover; margin: 0px; height: 100%;">
+<body class="bodyInitPage">
      <?php 
         include('cabecera.php');   
     ?>
     <br><br>
-    <font color="black">
+    
         <div class="container" style="margin-top: 10px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;">
             <div class="text-center">
                 <font size=7 color="black" face="Arial Black">
@@ -152,7 +145,6 @@ if (!isset($_SESSION['administrador']))
             <br>
         </div>
         </div>
-    </font>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 

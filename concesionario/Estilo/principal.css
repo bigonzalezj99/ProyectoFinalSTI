@@ -29,7 +29,7 @@
 }
 
 .inputsLogin{
-    width: 80%;
+    width: 100%;
 }
 
 .divRestorePassword{
@@ -68,4 +68,9 @@
 
 .tagRestorePass:hover{
     color: #00ff00;
+}
+
+.formLogin{
+    text-align: center;
+    width: 80%;
 }
