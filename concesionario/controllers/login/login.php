@@ -1,22 +1,29 @@
-
 <?php
-
 require_once 'controllers/conexion.php';
 
-$db_conexionLogin = mysqli_connect($db_host, $db_user, $db_pass, $db_nombre,$port);
+$db_connection = oci_connect($db_esquema, $db_password, $db_instance);
 
-if (!$db_conexionLogin) 
-{
-	die("No hay conexión: ".mysqli_connect_error());
+if(!$db_connection){
+	$m = oci_error();
+	echo $m['message'], "n";
+	exit;
+}
+else{
+	echo "Conexion con exito a Oracol!";
 }
 
+
+
+
+
+/*
 $email = utf8_decode($_POST["email"]);
 $password = utf8_decode($_POST["password"]);
 
-$query = mysqli_query($db_conexionLogin, "SELECT email, password FROM clinicaproyecto_2021.usuarios WHERE email = '".$email."' AND password = '".$password."' AND id_rol ='1';");
+$query = mysqli_query($db_connection, "SELECT email, password FROM clinicaproyecto_2021.usuarios WHERE email = '".$email."' AND password = '".$password."' AND id_rol ='1';");
 $resultadoL = mysqli_num_rows($query);
 
-$query2 = mysqli_query($db_conexionLogin, "SELECT email, password FROM clinicaproyecto_2021.usuarios WHERE email = '".$email."' AND password = '".$password."';");
+$query2 = mysqli_query($db_connection, "SELECT email, password FROM clinicaproyecto_2021.usuarios WHERE email = '".$email."' AND password = '".$password."';");
 $resultadoLL = mysqli_num_rows($query2);
 
 if($resultadoL > 0)
@@ -51,5 +58,6 @@ else
 {
 	echo "<script> alert('Usuario no existe');window.location= 'index.php'</script>";
 }
+*/
 
 ?>
