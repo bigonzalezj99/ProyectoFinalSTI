@@ -5,7 +5,7 @@
     a:hover,
     a:focus {
         color: white;
-        text-decoration: none;
+        text-decoration: none !important;
         transition: all 0.3s;
     }
 
@@ -116,6 +116,7 @@
         width: 100%;
         padding: 10px;
         transition: all 0.3s;
+        background: #1B1F78;
     }
 
     #sidebarCollapse {
@@ -193,9 +194,6 @@
 </style>
 
 <?php
-    //abrimos la sesión
-    
-    //Si la variable sesión está vacía
     if (!isset($_SESSION['administrador'])) 
     { 
         if (!isset($_SESSION['usuario'])) 
@@ -209,191 +207,170 @@
 
 
 <?php 
-    if (!isset($_SESSION['administrador'])) {
-    /* nos envía a la siguiente dirección en el caso de no poseer autorización */
+    // Si la sesión iniciada NO es webmaster
+    if (!isset($_SESSION['administrador'])){
     ?>
     <html>
-
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <div class="wrapper">
-        <!-- Sidebar Holder -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h4>CLINICA PRIVADA</h4>
-            </div>
-
-            <ul class="list-unstyled components">
-                <li style="color: white;">
-                    <a href="/proyectos/clinicaProyecto/views/inicio.php">Inicio</a>
-                </li>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Citas</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li> <a href="/proyectos/clinicaProyecto/views/citas/citas.php">Solicitar Cita</a> </li>
+        <head>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            <link rel="stylesheet" href="../icons/font-awesome/css/font-awesome.min.css">
+            <div class="wrapper">
+                <nav id="sidebar">
+                    <div class="sidebar-header">
+                        <h4>Concesionario</h4>
+                    </div>
+                    <ul class="list-unstyled components">
+                        <li class="active" style="color: white;">
+                            <a href="/proyectos/ProyectoFinalSTI/concesionario/views/inicio.php"><i class="fa fa-home" aria-hidden="true"></i> Inicio </a>
+                        </li>
+                        <li class="">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fa fa-car" aria-hidden="true"></i> Vehículos
+                            </a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/cotizar/cotizar.php"><i class="fa fa-car" aria-hidden="true"></i> Cotizar vehículo y repuestos</a> </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i> Usuarios
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/micuenta/micuenta.php"><i class="fa fa-user-o" aria-hidden="true"></i> Mi cuenta</a> </li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-                <li class="active">
-                    <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Tienda</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu2">
-                        <li> <a href="/proyectos/clinicaProyecto/tienda/index.php">Comprar Productos</a> </li>
+                    <ul class="list-unstyled CTAs">
+                        <li>
+                            <a href="../redirectLogout.php" class="download" style="color: black;"><b>Cerrar sesión</b></a>
+                        </li>
                     </ul>
-                </li>
-               
-
-            </ul>
-            <ul class="list-unstyled CTAs">
-                <li>
-                    <a href="../redirectLogout.php" class="download" style="color: black;"><b>Cerrar sesion</b></a>
-                </li>
-            </ul>
-        </nav>
-        <div id="contvar">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="navbar-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
+                </nav>
+                <div id="contvar">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="container-fluid">
+                            <button type="button" id="sidebarCollapse" class="navbar-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+                        </div>
+                    </nav>
                 </div>
-            </nav>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#sidebarCollapse').on('click', function() {
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('active');
-            });
-        });
-    </script>
-</head>
-
-</html>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#sidebarCollapse').on('click', function() {
+                        $('#sidebar').toggleClass('active');
+                        $(this).toggleClass('active');
+                    });
+                });
+            </script>
+        </head>
+    </html>
 
 <?php 
     }
 ?>   
 
 <?php 
-    if (!isset($_SESSION['usuario'])) {
-?>
-     
-<html>
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <div class="wrapper">
-        <!-- Sidebar Holder -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h4>CLINICA PRIVADA</h4>
-            </div>
-
-            <ul class="list-unstyled components">
-                <li style="color: white;">
-                    <a href="/proyectos/clinicaProyecto/views/inicio.php">Inicio</a>
-                </li>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Usuarios</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li> <a href="/proyectos/clinicaProyecto/views/usuario/usuarios.php">Lista de Usuarios</a> </li>
-                        <li> <a href="/proyectos/clinicaProyecto/views/roles/roles.php">Roles de Usuario</a> </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Citas</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li> <a href="/proyectos/clinicaProyecto/views/citas/citas.php">Lista de Citas</a> </li>
-                        <li> <a href="/proyectos/clinicaProyecto/views/ramaMedica/ramaMedica.php">Ramas Medicas</a> </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Empleados</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu2">
-                        <li> <a href="/proyectos/clinicaProyecto/views/empleados/personas.php">Lista de Empleados</a> </li>
-                        <li> <a href="/proyectos/clinicaProyecto/views/empleados/puestos.php">Puestos de Empleados</a>
+    // Si la sesión iniciada SI ES WEBMASTER
+    if (!isset($_SESSION['usuario'])){
+    ?>
+    <html>
+        <head>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            <link rel="stylesheet" href="../icons/font-awesome/css/font-awesome.min.css">
+            <div class="wrapper">
+                <nav id="sidebar">
+                    <div class="sidebar-header">
+                        <h4>Concesionario</h4>
+                    </div>
+                    <ul class="list-unstyled components">
+                        <li class="active" style="color: white;">
+                            <a href="/proyectos/ProyectoFinalSTI/concesionario/views/inicio.php"><i class="fa fa-home" aria-hidden="true"></i> Inicio </a>
                         </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pacientes</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu3">
-                        <li> <a href="/proyectos/clinicaProyecto/views/paciente/paciente.php">Listado de Pacientes</a> </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Sucursales</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu4">
-                        <li> <a href="/proyectos/clinicaProyecto/views/sucursales/sucursales.php">Lista de Sucursales</a> </li>
-                        <li> <a href="/proyectos/clinicaProyecto/views/habitaciones/habitaciones.php">Habitaciones de Sucursales</a> </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Medicamento</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu5">
-                        <li> <a href="/proyectos/clinicaProyecto/views/medicamento/medicamento.php">Lista de Medicamentos</a> </li>
-                        <li> <a href="/proyectos/clinicaProyecto/views/lotesMedicina/lotesMedicina.php">Lotes de Medicamentos</a> </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#pageSubmenu6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Ventas</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu6">
+                        <li class="">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fa fa-car" aria-hidden="true"></i> Vehículos
+                            </a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/vehiculos/vehiculos.php"><i class="fa fa-car" aria-hidden="true"></i> Administración vehículos</a> </li>
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/repuestos/repuestos.php"><i class="fa fa-cogs" aria-hidden="true"></i> Administración de repuestos</a> </li>
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/cotizar/cotizar.php"><i class="fa fa-car" aria-hidden="true"></i> Cotizar vehículo y repuestos</a> </li>
+                            </ul>
+                        </li>
                         <li>
-                            <a href="#">pag 1</a>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i> Usuarios
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/usuarios/usuarios.php"><i class="fa fa-users" aria-hidden="true"></i> Administración Usuarios</a> </li>
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/empleados/empleados.php"><i class="fa fa-briefcase" aria-hidden="true"></i> Administración Empleados</a> </li>
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/clientes/clientes.php"><i class="fa fa-user-o" aria-hidden="true"></i> Administración Clientes</a> </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <i class="fa fa-book" aria-hidden="true"></i> Facturas
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu2">
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/compras/compras.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;<i class="fa fa-caret-left" aria-hidden="true"></i> Compras</a> </li>
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/ventas/ventas.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;<i class="fa fa-caret-right" aria-hidden="true"></i> Ventas</a> </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fa fa-building" aria-hidden="true"></i> Sucursales
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu3">
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/sucursales/sucursales.php"><i class="fa fa-building" aria-hidden="true"></i> Administración Sucursales</a> </li>
+                            </ul>
                         </li>
                     </ul>
-                </li>
-
-            </ul>
-            <ul class="list-unstyled CTAs">
-                <li>
-                    <a href="../redirectLogout.php" class="download" style="color: black;"><b>Cerrar sesion</b></a>
-                </li>
-            </ul>
-        </nav>
-        <div id="contvar">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="navbar-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
+                    <ul class="list-unstyled CTAs">
+                        <li>
+                            <a href="../redirectLogout.php" class="download" style="color: black;"><b>Cerrar sesión</b></a>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="contvar">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="container-fluid">
+                            <button type="button" id="sidebarCollapse" class="navbar-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+                        </div>
+                    </nav>
                 </div>
-            </nav>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+            
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#sidebarCollapse').on('click', function() {
+                        $('#sidebar').toggleClass('active');
+                        $(this).toggleClass('active');
+                    });
+                });
+            </script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#sidebarCollapse').on('click', function() {
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('active');
-            });
-        });
-    </script>
-</head>
-
-</html>
-   
-<?php 
+        </head>
+    </html>
+    <?php 
     }
- 
 ?>
-
