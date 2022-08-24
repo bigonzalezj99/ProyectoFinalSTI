@@ -29,11 +29,15 @@
 					<div class="inputsLogin">
 						<input id="inputEmail" name="inputEmail" class="form-control" type="text" placeholder="Email"><br>
 						<input id="inputPass" name="inputPass" class="form-control" type="password" placeholder="Contraseña"><br>
-						<div class="divRestorePassword">
+						<div class="separateElements">
+							<a class="tagRestorePass" href="./restorePass.php">Crear cuenta</a>
 							<a class="tagRestorePass" href="./restorePass.php">¿Perdió su contraseña?</a>
 						</div>
 						<div class="divGetIntoSystem">
-							<button type="submit" id="btnGetToSystem" name="btnGetToSystem" class="btn btn-primary">Ingresar</button>
+							<button type="submit" id="btnGetToSystem" name="btnGetToSystem" class="btn btn-primary btnLogin">Ingresar</button>
+						</div>
+						<div>
+
 						</div>
 					</div>
 				</form>

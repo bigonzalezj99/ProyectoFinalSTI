@@ -31,8 +31,9 @@
     width: 100%;
 }
 
-.divRestorePassword{
-    text-align: right;
+.separateElements{
+    display: flex;
+    justify-content: space-between;
 }
 
 .divGetIntoSystem{
@@ -66,10 +67,20 @@
 }
 
 .tagRestorePass:hover{
-    color: #00ff00;
+    color: #ffa51d;
 }
 
 .formLogin{
     text-align: center;
     width: 80%;
+}
+
+.btnLogin{
+    background-color: #003f82 !important;
+    border-color: #003f82 !important;
+}
+
+.btnLogin:hover{
+    background-color: #0055bb !important;
+    border-color: #0055bb !important;
 }
