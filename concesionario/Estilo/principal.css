@@ -4,7 +4,6 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    opacity: 0.8;
 }
 
 .imgLoginCenter{
@@ -16,7 +15,7 @@
 }
 
 .divFormLogin{
-    background-color: #000055;
+    background-color: #880000;
     display: flex;
     align-items: center;
     flex-direction: column;

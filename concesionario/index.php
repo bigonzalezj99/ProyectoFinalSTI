@@ -20,13 +20,7 @@
 				<div class="imgLoginCenter">
 					<p class="parrToLoginTitle">CONCESIONARIO</p>
 					<p class="parrToLoginGroup">Grupo #1</p>
-						<ul class="parrToLoginMembers">
-							<li>Bryan Iván González Jiménez 1290-18-6335</li>
-							<li>Johan Estuardo Carrillo Berducido 1290-18-8728</li>
-							<li>Julio Saúl Ramos Chacón 1290-18-16675</li>
-							<li>Walter Eduardo Vásquez Moya 1290-18-18389</li>
-						</ul>
-					<img class="imgCarLogoOpacity" src="imgs/carLogin.png" alt="car" width="80%" height="50%">
+					<img class="imgCarLogoOpacity" src="imgs/carroRojo.png" alt="car" width="80%" height="50%">
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 divFormLogin">

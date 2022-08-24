@@ -63,7 +63,7 @@ if (!isset($_SESSION['administrador'])){
                     </table>
                 </div>
                 <div class="col-md-6">
-                    <img src="../imgs/siluetaCarroInicio.png" height="80%" width="80%">
+                    <img src="../imgs/carroAzul.png" height="100%" width="100%">
                 </div>
             </div>
             <br>
@@ -91,7 +91,7 @@ if (!isset($_SESSION['administrador'])){
                 </ul>
             </div>
         </div>
-        <hr size="8px" color="black" style="background-color: #1B1F78; opacity: 1;"/>
+        <hr size="8px" color="black" style="background-color: #880000; opacity: 1;"/>
         <div class="row">
             <div class="col-lg-6 textPromotions">
                 <p class="titlePromotions">Elije el vehículo que tú quieras</p>
@@ -101,10 +101,10 @@ if (!isset($_SESSION['administrador'])){
                 </p>
             </div>
             <div class="col-lg-6">
-                <img src="../imgs/carroRojo.png" height="100%" width="100%">
+                <img src="../imgs/carroGris.png" height="100%" width="100%">
             </div>
         </div>
-        <hr size="8px" color="black" style="background-color: #1B1F78; opacity: 1;"/>
+        <hr size="8px" color="black" style="background-color: #880000; opacity: 1;"/>
         <div class="row">
             <div class="col-lg-6">
                 <img src="../imgs/carroAmarillo.png" height="100%" width="100%">
@@ -117,7 +117,7 @@ if (!isset($_SESSION['administrador'])){
                 </p>
             </div>
         </div>
-        <hr size="8px" color="black" style="background-color: #1B1F78; opacity: 1;"/>
+        <hr size="8px" color="black" style="background-color: #880000; opacity: 1;"/>
         <div class="row divContent">
             <div class="col-md-3"></div>
             <div class="col-md-6">
