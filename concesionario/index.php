@@ -30,7 +30,7 @@
 						<input id="inputEmail" name="inputEmail" class="form-control" type="text" placeholder="Email"><br>
 						<input id="inputPass" name="inputPass" class="form-control" type="password" placeholder="Contraseña"><br>
 						<div class="separateElements">
-							<a class="tagRestorePass" href="./restorePass.php">Crear cuenta</a>
+							<a class="tagRestorePass" href="./registerUser.php">Crear cuenta</a>
 							<a class="tagRestorePass" href="./restorePass.php">¿Perdió su contraseña?</a>
 						</div>
 						<div class="divGetIntoSystem">
@@ -43,46 +43,6 @@
 				</form>
 			</div>
 		</div>
-
-		<script>
-			/*
-			const btnGetToSystem = document.getElementById('btnGetToSystem');
-			if(btnGetToSystem){
-				btnGetToSystem.addEventListener('click',()=>{
-					let inputEmail = document.getElementById('inputEmail');
-					let inputPass = document.getElementById('inputPass');
-
-					if(inputEmail.value && inputPass.value){
-						console.log(inputEmail.value);
-						console.log(inputPass.value);
-
-						let form = new FormData();
-						form.append('inputEmail',inputEmail.value);
-						form.append('inputPass',inputPass.value);
-
-						fetch("./controllers/login/login.php", {
-							method: 'POST',
-							body: form
-						})
-							.then(r=>r.json())
-							.then((response)=>{
-								console.log("Response");
-							})
-							.catch(e=> {
-								console.log("Error");
-							});
-					}
-					else{
-						Swal.fire({
-							icon: 'error',
-							title: 'Lo sentimos',
-							text: 'Ingrese usuario y contraseña'
-                    	});
-					}
-				});
-			}
-			*/
-		</script>
 
 		<?php
 			if(isset($_POST["btnGetToSystem"])){

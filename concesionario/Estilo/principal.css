@@ -84,3 +84,28 @@
     background-color: #0055bb !important;
     border-color: #0055bb !important;
 }
+
+.divInitialRegister{
+    margin-top: 3%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 3%;
+}
+
+.divTitleRegisterUser{
+    padding: 2%;
+    background-color: #880000;
+    color: white;
+}
+
+.whiteBackground{
+    background-color: white;
+}
+
+.centerImg{
+    display: flex;
+    align-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}

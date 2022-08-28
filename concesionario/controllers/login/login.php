@@ -16,8 +16,8 @@ else{
 	if($email && $password){
 		echo "Conexion con exito a Oracol! ----- ".$email." ----- ".$password." ||| ";
 
-		$selectAdmin = oci_parse($db_connection, "SELECT usuario.email, usuario.password FROM usuario INNER JOIN rol ON rol.idrol = '1' AND rol.idrol = usuario.idrol WHERE usuario.email = '".$email."' AND usuario.password = '".$password."'");
-		$selectOthers = oci_parse($db_connection, "SELECT usuario.email, usuario.password FROM usuario INNER JOIN rol ON rol.idrol <> '1' AND rol.idrol = usuario.idrol WHERE usuario.email = '".$email."' AND usuario.password = '".$password."'");
+		$selectAdmin = oci_parse($db_connection, "SELECT usuario.email, usuario.password FROM usuario INNER JOIN rol ON usuario.idrol = '1' OR usuario.idrol = '2' AND rol.idrol = usuario.idrol WHERE usuario.email = '".$email."' AND usuario.password = '".$password."'");
+		$selectOthers = oci_parse($db_connection, "SELECT usuario.email, usuario.password FROM usuario INNER JOIN rol ON usuario.idrol <> '1' AND usuario.idrol <> '2' AND rol.idrol = usuario.idrol WHERE usuario.email = '".$email."' AND usuario.password = '".$password."'");
 
 		$intAdmin = oci_execute($selectAdmin);
 		$intOther = oci_execute($selectOthers);
