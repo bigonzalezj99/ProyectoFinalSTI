@@ -43,7 +43,7 @@ btnSolicitar.addEventListener('click', ()=>{
                     Swal.fire({
                         type: 'success',
                         title: 'Enviando...',
-                        text: 'Se está procesanod el correo...'
+                        text: 'Se está procesando el correo...'
                     });
 
                     // Cambiar el Service_ID o bien dejar el default_service
