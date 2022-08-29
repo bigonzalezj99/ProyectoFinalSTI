@@ -33,11 +33,11 @@ require_once 'controllers/conexion.php';
                                 <label for="lbl_password" class="form-label"><b>Se ha enviado a su correo la nueva contraseña</b></label>
                             </div>
                             <div id="divNewPass" class="col-md-12 divEmailSendingHide" style="margin-top: 2%;">
-                                <input type="text" name="txt_newPass" id="txt_newPass" class="form-control" placeholder="tu_mail@gmail.com">
+                                <input type="text" name="txt_newPass" id="txt_newPass" class="form-control" placeholder="mail@gmail.com">
                             </div>
                         </div>
                         <div class="text-center" style="margin-top: 2%;">
-                            <input type="submit" name="btn_solicitar" id="btn_solicitar" class="btn btn-primary" value="Solicitar una cuenta">
+                            <input type="submit" name="btn_solicitar" id="btn_solicitar" class="btn btn-primary" value="Recuperar contraseña">
                             <a href="./" class="btn btn-warning">Regresar</a>
                         </div>
                         <br><br>
