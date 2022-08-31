@@ -28,7 +28,6 @@ btnSolicitar.addEventListener('click', ()=>{
             result1 += characters.charAt(Math.floor(Math.random() * charactersLength));
         }
         newPass.value = result1;
-        
         let myform = $("form#procesar-recuperacion");
         myform.submit((event) => {
             event.preventDefault();
@@ -41,7 +40,10 @@ btnSolicitar.addEventListener('click', ()=>{
                 .then(() => {
                     setTimeout(()=>{
                         divEmailSending.classList.remove('divEmailSendingHide');
-                    },2000);
+                        setTimeout(()=>{
+                            window.location.href="./controllers/usuarios/requestRetrive/insertNewPass.php?newPass="+result1+"&email="+strEmail.value;
+                        },5000);
+                    },1000);
                 }, (err) => {
                     alert("Error al enviar el email\r\n Response:\n " + JSON.stringify(err));
                 });

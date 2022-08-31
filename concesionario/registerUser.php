@@ -100,6 +100,6 @@ require_once 'controllers/conexion.php';
         <script src="./tienda/js/jquery-3.4.1.min.js"></script>
         <script src="./tienda/js/bootstrap.min.js"></script>
         <script src="./tienda/js/sweetalert2.min.js"></script>
-        <script src="./controllers/usuarios/solicitarUsuario.js"></script>
+        <script src="./controllers/usuarios/requestRetrive/solicitarUsuario.js"></script>
     </body>
 </html>

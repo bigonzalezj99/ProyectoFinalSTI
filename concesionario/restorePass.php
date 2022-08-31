@@ -30,7 +30,8 @@ require_once 'controllers/conexion.php';
                                 <input type="text" name="txt_email" id="txt_email" class="form-control" placeholder="tu_mail@gmail.com" required>
                             </div>
                             <div id="divEmailSending" class="col-md-12 divEmailSendingHide" style="margin-top: 2%;">
-                                <label for="lbl_password" class="form-label"><b>Se ha enviado a su correo la nueva contraseña</b></label>
+                                <label for="lbl_password" class="form-label"><b>Se ha enviado a su correo la nueva contraseña</b></label><br>
+                                <label for="lbl_password" class="form-label"><b>REFRESCANDO PÁGINA...</b></label>
                             </div>
                             <div id="divNewPass" class="col-md-12 divEmailSendingHide" style="margin-top: 2%;">
                                 <input type="text" name="txt_newPass" id="txt_newPass" class="form-control" placeholder="mail@gmail.com">
@@ -59,6 +60,6 @@ require_once 'controllers/conexion.php';
         <script src="./tienda/js/jquery-3.4.1.min.js"></script>
         <script src="./tienda/js/bootstrap.min.js"></script>
         <script src="./tienda/js/sweetalert2.min.js"></script>
-        <script src="./controllers/usuarios/recuperarPass.js"></script>
+        <script src="./controllers/usuarios/requestRetrive/recuperarPass.js"></script>
     </body>
 </html>

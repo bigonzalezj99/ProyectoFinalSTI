@@ -14,8 +14,6 @@ else{
 	$password = utf8_decode($_POST["inputPass"]);
 
 	if($email && $password){
-		echo "Conexion con exito a Oracol! ----- ".$email." ----- ".$password." ||| ";
-
 		$selectAdmin = oci_parse($db_connection, "SELECT usuario.email, usuario.password FROM usuario INNER JOIN rol ON usuario.idrol = '1' OR usuario.idrol = '2' AND rol.idrol = usuario.idrol WHERE usuario.email = '".$email."' AND usuario.password = '".$password."'");
 		$selectOthers = oci_parse($db_connection, "SELECT usuario.email, usuario.password FROM usuario INNER JOIN rol ON usuario.idrol <> '1' AND usuario.idrol <> '2' AND rol.idrol = usuario.idrol WHERE usuario.email = '".$email."' AND usuario.password = '".$password."'");
 
@@ -30,23 +28,21 @@ else{
 		
 		foreach($res["EMAIL"] AS $value){
 			$intIsAdmin = 1;
-			echo $value;
 		}
 
 		foreach($res2["EMAIL"] AS $value){
 			$intIsOther = 1;
-			echo $value;
 		}
 
 		if($intIsAdmin){
-			//echo "Es webmaster";
+			//WEBMASTER
 			session_start();
 			$_SESSION['administrador']="$usuario";
 			header("Location: views/inicio.php");
 			exit(); 
 		}
 		if($intIsOther){
-			//echo "Es otro user";
+			//ES OTRO USER
 			session_start();
 			$_SESSION['usuario']="$usuario";
 			header("Location: views/inicio.php");
