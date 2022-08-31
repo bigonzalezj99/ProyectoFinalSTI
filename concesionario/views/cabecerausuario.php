@@ -33,7 +33,7 @@
         position: relative;
         min-width: 250px;
         max-width: 250px;
-        background: #1B1F78;
+        background: #880000;
         color: #fff;
         transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
         transform-origin: bottom left;
@@ -46,7 +46,7 @@
 
     #sidebar .sidebar-header {
         padding: 20px;
-        background: #1B1F78;
+        background: #880000;
     }
 
     #sidebar ul.components {
@@ -73,7 +73,7 @@
     #sidebar ul li.active>a,
     a[aria-expanded="true"] {
         color: #fff;
-        background: #31358F;
+        background: #af0000;
     }
 
 
@@ -92,7 +92,7 @@
     ul ul a {
         font-size: 0.9em !important;
         padding-left: 30px !important;
-        background: #31358F;
+        background: #af0000;
     }
 
     ul.CTAs {
