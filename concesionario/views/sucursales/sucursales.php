@@ -61,12 +61,12 @@ else{
                         while($fila = oci_fetch_array($selectBranchOffice, OCI_ASSOC+OCI_RETURN_NULLS)){
                             print "<tr id='idTr_".$fila["IDSUCURSAL"]."' class='idTrClass'>\n";
                             $boolPrint = false;
-                            foreach ($fila AS $elemento) {
+                            foreach ($fila AS $key => $elemento) {
                                 if($boolPrint === false){
                                     $boolPrint = true;
                                 }
                                 else{
-                                    print "<td>". ($elemento !== null ? htmlentities($elemento, ENT_QUOTES) : "") ."</td>\n";   
+                                    print "<td id='".$key."_".$fila["IDSUCURSAL"]."'>". ($elemento !== null ? htmlentities($elemento, ENT_QUOTES) : "") ."</td>\n";   
                                 }
                             }
                             print "<td>

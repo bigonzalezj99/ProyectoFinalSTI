@@ -14,7 +14,14 @@
         $strDireccion = $_GET["direccion"];
         $strMunicipio = $_GET["municipio"];
         $strDepartamento = $_GET["departamento"];
-        $objInsertSucursal = oci_parse($db_connection, "INSERT INTO CONCESIONARIA.SUCURSAL (IDSUCURSAL, DIRECCION, MUNICIPIO, DEPARTAMENTO, DESCRIPCION) VALUES ('".$strId."','".$strDireccion."', '".$strMunicipio."', '".$strDepartamento."', '".$strDescription."')");
+        $isUpdate = $_GET["update"];
+
+        if($isUpdate === "N"){
+            $objInsertSucursal = oci_parse($db_connection, "INSERT INTO CONCESIONARIA.SUCURSAL (IDSUCURSAL, DIRECCION, MUNICIPIO, DEPARTAMENTO, DESCRIPCION) VALUES ('".$strId."','".$strDireccion."', '".$strMunicipio."', '".$strDepartamento."', '".$strDescription."')");
+        }
+        elseif($isUpdate === "Y"){
+            $objInsertSucursal = oci_parse($db_connection, "UPDATE SUCURSAL SET DIRECCION = '".$strDireccion."', MUNICIPIO = '".$strMunicipio."', DEPARTAMENTO = '".$strDepartamento."', DESCRIPCION = '".$strDescription."' WHERE IDSUCURSAL = '".$strId."'");
+        }
         $boolInsert = oci_execute($objInsertSucursal);
         ?>
         <link rel="stylesheet" href="../../tienda/css/sweetalert2.min.css">
