@@ -3,7 +3,7 @@
     $db_connection = oci_connect($db_esquema, $db_password, $db_instance);
     
     if(!$db_connection){
-        echo "Conexion sin exito a Oracol...";
+        echo "Conexion sin exito a Oracle...";
         $m = oci_error();
         echo $m['message'], "n";
         exit;

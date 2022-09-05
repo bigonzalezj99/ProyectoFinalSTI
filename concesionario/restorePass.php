@@ -22,7 +22,6 @@ require_once 'controllers/conexion.php';
                     <h3 class="text-center">Solicitud de recuperación de contraseña</h3>
                 </div>
                 <div class="col-md-6 whiteBackground">
-                    <!-- procesar-solicitud --> 
                     <form id="procesar-recuperacion" action="" method="post">
                         <div class="row" style="padding: 5%">
                             <div class="col-md-12">
