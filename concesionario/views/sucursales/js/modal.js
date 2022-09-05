@@ -1,6 +1,7 @@
 let modalForm = document.getElementById("modalForm");
 let btnAddNew = document.getElementById("btnAddNew");
 let spanClose = document.getElementById("close");
+let btnDelete = document.querySelectorAll('.btnDelete');
 
 btnAddNew.onclick = function() {
     modalForm.style.display = "block";
@@ -77,3 +78,10 @@ window.onclick = function(event) {
         modalForm.style.display = "none";
     }
 }
+
+btnDelete.forEach($btn => {
+    $btn.addEventListener('click',() => {
+        let id = $btn.id.split('_')[1];
+        window.location.href="../../controllers/sucursales/deleteSucursal.php?id="+id;
+    });
+});
