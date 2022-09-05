@@ -7,7 +7,8 @@ let btnEdit = document.querySelectorAll('.btnEdit');
 btnAddNew.onclick = function() {
     modalForm.style.display = "block";
     let modalBody = document.getElementById('modalBody');
-    let template = `<div id="formSucursales" class="formSucursales">
+    let template = `<div id="headerForm" class="headerForm">NUEVO REGISTRO</div>
+                    <div id="formSucursales" class="formSucursales">
                         <div class="row" style="margin-top: 2%">
                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
                                 <label><strong>Descripción:</strong></label>
@@ -51,15 +52,27 @@ btnAddNew.onclick = function() {
     formSucursales.forEach($form => {
         $form.remove();
     });
+    let headerForm = document.querySelectorAll('.headerForm');
+    headerForm.forEach($form => {
+        $form.remove();
+    });
+
     modalBody.insertAdjacentHTML('afterbegin',template);
 
     let btnSaveRegister = document.getElementById('btnSaveRegister');
     btnSaveRegister.addEventListener('click',()=>{
         let idTrClass = document.querySelectorAll('.idTrClass');
         let idSucursal = 0;
-        idTrClass.forEach($tr => {
-            idSucursal = parseInt($tr.id)+1;
-        });
+        if(idTrClass.length > 0){
+            idTrClass.forEach($tr => {
+                let id = $tr.id.split('_')[1];
+                idSucursal = parseInt(id)+1;
+            });
+        }
+        else{
+            idSucursal = 1;
+        }
+
         let txtDescripcion = document.getElementById('txt_descripcion');
         let txtDireccion = document.getElementById('txt_direccion');
         let txtMunicipio = document.getElementById('txt_municipio');
@@ -72,6 +85,10 @@ spanClose.onclick = function() {
     modalForm.style.display = "none";
     let formSucursales = document.querySelectorAll('.formSucursales');
     formSucursales.forEach($form => {
+        $form.remove();
+    });
+    let headerForm = document.querySelectorAll('.headerForm');
+    headerForm.forEach($form => {
         $form.remove();
     });
 }
@@ -98,7 +115,8 @@ btnEdit.forEach($btn => {
         let municipality = document.getElementById(`MUNICIPIO_${id}`).textContent;
         let departament = document.getElementById(`DEPARTAMENTO_${id}`).textContent;
         let modalBody = document.getElementById('modalBody');
-        let template = `<div id="formSucursales" class="formSucursales">
+        let template = `<div id="headerForm" class="headerForm">EDITAR REGISTRO</div>
+                        <div id="formSucursales" class="formSucursales">
                             <div class="row" style="margin-top: 2%">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
                                     <label><strong>Descripción:</strong></label>
@@ -140,6 +158,10 @@ btnEdit.forEach($btn => {
                         </div>`;
         let formSucursales = document.querySelectorAll('.formSucursales');
         formSucursales.forEach($form => {
+            $form.remove();
+        });
+        let headerForm = document.querySelectorAll('.headerForm');
+        headerForm.forEach($form => {
             $form.remove();
         });
         modalBody.insertAdjacentHTML('afterbegin',template);

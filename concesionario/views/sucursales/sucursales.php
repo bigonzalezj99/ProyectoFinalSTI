@@ -104,7 +104,7 @@ else{
                     responsive: true,
                     "language": {
                         "lengthMenu": "Mostrando _MENU_ registros por página",
-                        "zeroRecords": "No encontrado",
+                        "zeroRecords": "No hay registros",
                         "info": "Mostrando página _PAGE_ de _PAGES_",
                         "infoEmpty": "No hay registros disponibles",
                         "infoFiltered": "(Filtrado de _MAX_ registros)",

@@ -41,6 +41,12 @@
     justify-content: center;
 }
 
+.headerForm{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
 /********** MODAL **********/
 .modalForm {
     display: none;
