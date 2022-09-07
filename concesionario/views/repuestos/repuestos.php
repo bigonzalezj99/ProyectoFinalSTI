@@ -18,8 +18,8 @@ else{
     $executeBranchOffice = oci_execute($selectBranchOffice);
     ?>
     <head>
-        <title>Repuestos ORACOL</title>
-        <link rel="icon" type="image/png" href="../../imgs/sucursales.png"/>
+        <title>Repuestos</title>
+        <link rel="icon" type="image/png" href="../../imgs/repuestosIcon.png"/>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="../styles/style.css">
@@ -31,7 +31,7 @@ else{
         <?php include('../cabecera.php'); ?>
         <div class="contPage">
         <div class="titlePage">
-            Administración de repuestos Mr. coolkid
+            Administración de repuestos
         </div>
         <br><br>
         <div class="text-justify marginBottom">
