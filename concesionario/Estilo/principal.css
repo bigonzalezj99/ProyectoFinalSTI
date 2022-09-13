@@ -1,0 +1,115 @@
+.divBackgroundLogo{
+    background-image: url("../imgs/fondoColores.gif");
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgLoginCenter{
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.divFormLogin{
+    background-color: #880000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titleLogin{
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.inputsLogin{
+    width: 100%;
+}
+
+.separateElements{
+    display: flex;
+    justify-content: space-between;
+}
+
+.divGetIntoSystem{
+    margin-top: 5%;
+    text-align: center;
+}
+
+.parrToLoginTitle{
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.parrToLoginGroup{
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.parrToLoginMembers{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tagRestorePass{
+    color: #ffffff;
+}
+
+.tagRestorePass:hover{
+    color: #ffa51d;
+}
+
+.formLogin{
+    text-align: center;
+    width: 80%;
+}
+
+.btnLogin{
+    background-color: #003f82 !important;
+    border-color: #003f82 !important;
+}
+
+.btnLogin:hover{
+    background-color: #0055bb !important;
+    border-color: #0055bb !important;
+}
+
+.divInitialRegister{
+    margin-top: 3%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 3%;
+}
+
+.divTitleRegisterUser{
+    padding: 2%;
+    background-color: #880000;
+    color: white;
+}
+
+.whiteBackground{
+    background-color: white;
+}
+
+.centerImg{
+    display: flex;
+    align-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.divEmailSendingHide{
+    display: none;
+}
