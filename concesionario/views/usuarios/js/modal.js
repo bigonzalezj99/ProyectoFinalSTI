@@ -176,9 +176,9 @@ btnEdit.forEach($btn => {
         btnSaveRegister.addEventListener('click',() => {
             let txtEmail = document.getElementById('txt_email');
             let txtPassword = document.getElementById('txt_password');
-            let txtIdRol = document.getElementById('txt_idrol');
+            let txtIdRol = document.getElementById('txt_idrol').value.split(' ')[0];
 
-            window.location.href="../../controllers/usuarios/insertUsuario.php?id="+id+"&email="+txtEmail.value+"&password="+txtPassword.value+"&idrol="+txtIdRol.value+"&update=Y";
+            window.location.href="../../controllers/usuarios/insertUsuario.php?id="+id+"&email="+txtEmail.value+"&password="+txtPassword.value+"&idrol="+txtIdRol+"&update=Y";
         });        
     });
 });

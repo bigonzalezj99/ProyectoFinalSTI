@@ -16,7 +16,8 @@
 
         if ($isUpdate === "N") {
             $objInsertUsuario = oci_parse($db_connection, "INSERT INTO CONCESIONARIA.USUARIO(IDUSUARIO, EMAIL, PASSWORD, IDROL) VALUES('".$strId."','".$strEmail."', '".$strPassword."', '".$strIdRol."')");
-        } elseif ($isUpdate === "Y") {
+        }
+        elseif ($isUpdate === "Y") {
             $objInsertUsuario = oci_parse($db_connection, "UPDATE USUARIO SET EMAIL = '".$strEmail."', PASSWORD = '".$strPassword."', IDROL = '".$strIdRol."' WHERE IDUSUARIO = '".$strId."'");
         }
         $boolInsert = oci_execute($objInsertUsuario);
