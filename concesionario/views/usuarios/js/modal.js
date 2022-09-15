@@ -66,9 +66,13 @@ btnAddNew.onclick = function() {
         if (idTrClass.length > 0) {
             idTrClass.forEach($tr => {
                 let id = $tr.id.split('_')[1];
-                idUsuario = parseInt(id)+1;
+                if( parseInt(id) > parseInt(idUsuario) ){
+                    idUsuario = parseInt(id);
+                }
             });
-        } else {
+            idUsuario++;
+        }
+        else{
             idUsuario = 1;
         }
 

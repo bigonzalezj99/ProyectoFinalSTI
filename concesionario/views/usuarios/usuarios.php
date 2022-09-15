@@ -87,7 +87,9 @@ else{
                                         $boolPrint = true;
                                     }
                                     else{
-                                        print "<td id='".$key."_".$fila["IDUSUARIO"]."'>". ($elemento !== null ? htmlentities($elemento, ENT_QUOTES) : "") ."</td>\n";   
+                                        if($key !== "IDROL"){
+                                            print "<td id='".$key."_".$fila["IDUSUARIO"]."'>". ($elemento !== null ? htmlentities($elemento, ENT_QUOTES) : "") ."</td>\n";   
+                                        }
                                     }
                                 }
                                 print "<td>
