@@ -85,3 +85,14 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  .imgPreviewTable{
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 30px;
+  }
+
+  .imgPreviewForm{
+    width: 160px;
+    height: 160px;
+  }
