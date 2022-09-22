@@ -5,7 +5,7 @@ let btnDelete = document.querySelectorAll('.btnDelete');
 let btnEdit = document.querySelectorAll('.btnEdit');
 
 function readImage (input){
-    if(input.files && input.files[0]){
+    if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
             $('#imgPreview').attr('src', e.target.result);
@@ -43,11 +43,8 @@ btnAddNew.onclick = function() {
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
                                 <select type="number" name="txt_idtipotransmicionvehiculo" id="txt_idtipotransmicionvehiculo" class="form-control" required>
-                                    <option disabled selected>--Seleccione una transmisión--</option>
-                                    <option value="1">Manual</option>
-                                    <option value="2">Automática</option>
-                                    <option value="3">Continuamente variable</option>
-                                    <option value="4">Doble embrague</option>
+                                    <option disabled selected>Seleccione una opción</option>
+                                    ${templateTransmicion}
                                 </select>
                             </div>
                         </div>
@@ -58,24 +55,8 @@ btnAddNew.onclick = function() {
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
                                 <select type="number" name="txt_idtipovehiculo" id="txt_idtipovehiculo" class="form-control" required>
-                                    <option disabled selected>--Seleccione un tipo de vehículo--</option>
-                                    <option value="1">Monovolumen</option>
-                                    <option value="2">Dos volúmenes</option>
-                                    <option value="3">Dos volúmenes y medio</option>
-                                    <option value="4">Tres volúmenes</option>
-                                    <option value="5">Berlina</option>
-                                    <option value="6">Sedán</option>
-                                    <option value="7">Cupé</option>
-                                    <option value="8">Hatchback</option>
-                                    <option value="9">Descapotable</option>
-                                    <option value="10">Roadster</option>
-                                    <option value="11">Familiar</option>
-                                    <option value="12">Todoterreno</option>
-                                    <option value="13">Crossover</option>
-                                    <option value="14">Deportivo</option>
-                                    <option value="15">Camioneta</option>
-                                    <option value="16">Pick-up</option>
-                                    <option value="17">Hardtop</option>
+                                    <option disabled selected>Seleccione una opción</option>
+                                    ${templateTipo}
                                 </select>
                             </div>
                         </div>
@@ -86,31 +67,8 @@ btnAddNew.onclick = function() {
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
                                 <select type="number" name="txt_idmarcavehiculo" id="txt_idmarcavehiculo" class="form-control" required>
-                                    <option disabled selected>--Seleccione una marca--</option>
-                                    <option value="1">Aston Martin</option>
-                                    <option value="2">Fiat</option>
-                                    <option value="3">Ferrari</option>
-                                    <option value="4">Ford</option>
-                                    <option value="5">Chevrolet</option>
-                                    <option value="6">Honda</option>
-                                    <option value="7">Mazda</option>
-                                    <option value="8">Renault</option>
-                                    <option value="9">Toyota</option>
-                                    <option value="10">Subaru</option>
-                                    <option value="11">Hyundai</option>
-                                    <option value="12">Mclaren</option>
-                                    <option value="13">Volkswagen</option>
-                                    <option value="14">Land Rover</option>
-                                    <option value="15">Kia</option>
-                                    <option value="16">Nissan</option>
-                                    <option value="17">Porsche</option>
-                                    <option value="18">Mercedes Benz</option>
-                                    <option value="19">Dodge</option>
-                                    <option value="20">Jeep</option>
-                                    <option value="21">Bentley</option>
-                                    <option value="22">Chrysler</option>
-                                    <option value="23">Cadillac</option>
-                                    <option value="24">Mitsubishi</option>
+                                    <option disabled selected>Seleccione una opción</option>
+                                    ${templateMarca}
                                 </select>
                             </div>
                         </div>
@@ -121,9 +79,8 @@ btnAddNew.onclick = function() {
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
                                 <select type="text" name="txt_idestadovehiculo" id="txt_idestadovehiculo" class="form-control" required>
-                                    <option disabled selected>--Seleccione un estado--</option>
-                                    <option value="1">Activo</option>
-                                    <option value="2">Inactivo</option>
+                                    <option disabled selected>Seleccione una opción</option>
+                                    ${templateEstado}
                                 </select>
                             </div>
                         </div>
@@ -175,10 +132,9 @@ btnAddNew.onclick = function() {
         let boolFirstPosition = true;
         let txtImagenElements = document.querySelectorAll('.txt_imagen');
         txtImagenElements.forEach($item => {
-            if(boolFirstPosition){
+            if (boolFirstPosition) {
                 boolFirstPosition = false;
-            }
-            else{
+            } else {
                 $item.removeAttribute('id');
                 $item.removeAttribute('class');
                 $item.removeAttribute('name');
@@ -195,14 +151,14 @@ btnAddNew.onclick = function() {
     btnSaveRegister.addEventListener('click',()=>{
         let idTrClass = document.querySelectorAll('.idTrClass');
         let idVehiculos = 0;
-        if(idTrClass.length > 0){
+
+        if (idTrClass.length > 0) {
             idTrClass.forEach($tr => {
                 let id = $tr.id.split('_')[1];
                 idVehiculos = parseInt(id)+1;
             });
             idVehiculos++;
-        }
-        else{
+        } else {
             idVehiculos = 1;
         }
 
@@ -257,8 +213,12 @@ btnEdit.forEach($btn => {
         let typeVehicle = document.getElementById(`TIPO_${id}`).textContent;
         let brand = document.getElementById(`MARCA_${id}`).textContent;
         let state = document.getElementById(`ESTADO_${id}`).textContent;
-
         let modalBody = document.getElementById('modalBody');
+        let idTr = document.getElementById(`idTr_${id}`);
+        let intIdTransmicion = idTr.className.split('_')[1];
+        let intIdTipo = idTr.className.split('_')[1];
+        let intIdMarca = idTr.className.split('_')[1];
+        let intIdEstado = idTr.className.split('_')[1];
         let template = `<div id="headerForm" class="headerForm">EDITAR REGISTRO</div>
                         <div id="formVehiculos" class="formVehiculos">
 
@@ -285,12 +245,9 @@ btnEdit.forEach($btn => {
                                     <label><strong>Transmisión:</strong></label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
-                                    <select type="number" name="txt_idtipotransmicionvehiculo" id="txt_idtipotransmicionvehiculo" class="form-control" required value="${transmission}">
-                                        <option disabled selected>--Seleccione una transmisión--</option>
-                                        <option value="1">Manual</option>
-                                        <option value="2">Automática</option>
-                                        <option value="3">Continuamente variable</option>
-                                        <option value="4">Doble embrague</option>
+                                    <select type="number" name="txt_idtipotransmicionvehiculo" id="txt_idtipotransmicionvehiculo" class="form-control" required>
+                                        <option value="${intIdTransmicion}" disabled selected>${transmission}</option>
+                                        ${templateTransmicion}
                                     </select>
                                 </div>
                             </div>
@@ -300,25 +257,9 @@ btnEdit.forEach($btn => {
                                     <label><strong>Tipo:</strong></label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
-                                    <select type="number" name="txt_idtipovehiculo" id="txt_idtipovehiculo" class="form-control" required value="${typeVehicle}">
-                                        <option disabled selected>--Seleccione un tipo de vehículo--</option>
-                                        <option value="1">Monovolumen</option>
-                                        <option value="2">Dos volúmenes</option>
-                                        <option value="3">Dos volúmenes y medio</option>
-                                        <option value="4">Tres volúmenes</option>
-                                        <option value="5">Berlina</option>
-                                        <option value="6">Sedán</option>
-                                        <option value="7">Cupé</option>
-                                        <option value="8">Hatchback</option>
-                                        <option value="9">Descapotable</option>
-                                        <option value="10">Roadster</option>
-                                        <option value="11">Familiar</option>
-                                        <option value="12">Todoterreno</option>
-                                        <option value="13">Crossover</option>
-                                        <option value="14">Deportivo</option>
-                                        <option value="15">Camioneta</option>
-                                        <option value="16">Pick-up</option>
-                                        <option value="17">Hardtop</option>
+                                    <select type="number" name="txt_idtipovehiculo" id="txt_idtipovehiculo" class="form-control" required>
+                                        <option value="${intIdTipo}" disabled selected>${typeVehicle}</option>
+                                        ${templateTipo}
                                     </select>
                                 </div>
                             </div>
@@ -328,32 +269,9 @@ btnEdit.forEach($btn => {
                                     <label><strong>Marca:</strong></label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
-                                    <select type="number" name="txt_idmarcavehiculo" id="txt_idmarcavehiculo" class="form-control" required value="${brand}">
-                                        <option disabled selected>--Seleccione una marca--</option>
-                                        <option value="1">Aston Martin</option>
-                                        <option value="2">Fiat</option>
-                                        <option value="3">Ferrari</option>
-                                        <option value="4">Ford</option>
-                                        <option value="5">Chevrolet</option>
-                                        <option value="6">Honda</option>
-                                        <option value="7">Mazda</option>
-                                        <option value="8">Renault</option>
-                                        <option value="9">Toyota</option>
-                                        <option value="10">Subaru</option>
-                                        <option value="11">Hyundai</option>
-                                        <option value="12">Mclaren</option>
-                                        <option value="13">Volkswagen</option>
-                                        <option value="14">Land Rover</option>
-                                        <option value="15">Kia</option>
-                                        <option value="16">Nissan</option>
-                                        <option value="17">Porsche</option>
-                                        <option value="18">Mercedes Benz</option>
-                                        <option value="19">Dodge</option>
-                                        <option value="20">Jeep</option>
-                                        <option value="21">Bentley</option>
-                                        <option value="22">Chrysler</option>
-                                        <option value="23">Cadillac</option>
-                                        <option value="24">Mitsubishi</option>
+                                    <select type="number" name="txt_idmarcavehiculo" id="txt_idmarcavehiculo" class="form-control" required>
+                                        <option value="${intIdMarca}" disabled selected>${brand}</option>
+                                        ${templateMarca}
                                     </select>
                                 </div>
                             </div>
@@ -363,10 +281,9 @@ btnEdit.forEach($btn => {
                                     <label><strong>Estado:</strong></label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
-                                    <select type="text" name="txt_idestadovehiculo" id="txt_idestadovehiculo" class="form-control" required value="${state}">
-                                        <option disabled selected>--Seleccione un estado--</option>
-                                        <option value="1">Activo</option>
-                                        <option value="2">Inactivo</option>
+                                    <select type="text" name="txt_idestadovehiculo" id="txt_idestadovehiculo" class="form-control" required>
+                                        <option value="${intIdEstado}" disabled selected>${state}</option>
+                                        ${templateEstado}
                                     </select>
                                 </div>
                             </div>
@@ -438,18 +355,18 @@ btnEdit.forEach($btn => {
             let txtDescripcion = document.getElementById('txt_descripcion');
             let txtPrecio = document.getElementById('txt_precio');
             let txtImagen = document.getElementById('txt_imagen');
-            let txtTransmicion = document.getElementById('txt_idtipotransmicionvehiculo');
-            let txtTipo = document.getElementById('txt_idtipovehiculo');
-            let txtMarca = document.getElementById('txt_idmarcavehiculo');
-            let txtEstado = document.getElementById('txt_idestadovehiculo');
+            let txtTransmicion = document.getElementById('txt_idtipotransmicionvehiculo').value.split(' ')[0];
+            let txtTipo = document.getElementById('txt_idtipovehiculo').value.split(' ')[0];
+            let txtMarca = document.getElementById('txt_idmarcavehiculo').value.split(' ')[0];
+            let txtEstado = document.getElementById('txt_idestadovehiculo').value.split(' ')[0];
             let btnSubmitImg = document.getElementById('btnSubmitImg');
             let pathImage = document.getElementById(`tdImgView_${id}`).getAttribute('src');
             
-            if(txtImagen.value){
+            if (txtImagen.value) {
                 btnSubmitImg.click();
             }
 
-            window.location.href="../../controllers/vehiculos/insertVehiculo.php?id="+id+"&descripcion="+txtDescripcion.value+"&precio="+txtPrecio.value+"&imagen="+txtImagen.value+"&pathImage="+pathImage+"&idtipotransmicionvehiculo="+txtTransmicion.value+"&idtipovehiculo="+txtTipo.value+"&idmarcavehiculo="+txtMarca.value+"&idestadovehiculo="+txtEstado.value+"&update=Y";
+            window.location.href="../../controllers/vehiculos/insertVehiculo.php?id="+id+"&descripcion="+txtDescripcion.value+"&precio="+txtPrecio.value+"&imagen="+txtImagen.value+"&pathImage="+pathImage+"&idtipotransmicionvehiculo="+txtTransmicion+"&idtipovehiculo="+txtTipo+"&idmarcavehiculo="+txtMarca+"&idestadovehiculo="+txtEstado+"&update=Y";
         });
     });
 });

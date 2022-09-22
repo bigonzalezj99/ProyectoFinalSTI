@@ -33,7 +33,7 @@ btnAddNew.onclick = function() {
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
                                 <select type="number" name="txt_idrol" id="txt_idrol" class="form-control" required>
-                                    <option disabled selected>Seleccione una opcion</option>
+                                    <option disabled selected>Seleccione una opción</option>
                                     ${templateRoles}
                                 </select>
                             </div>
@@ -71,8 +71,7 @@ btnAddNew.onclick = function() {
                 }
             });
             idUsuario++;
-        }
-        else{
+        } else {
             idUsuario = 1;
         }
 
