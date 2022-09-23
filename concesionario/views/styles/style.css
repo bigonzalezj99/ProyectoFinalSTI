@@ -85,3 +85,32 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  .imgIcon{
+    max-width: 20%;
+  }
+
+@media only screen and (max-width: 1500px) {
+    .imgIcon{
+        max-width: 30%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .imgIcon{
+        max-width: 45%;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .imgIcon{
+        max-width: 60%;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .imgIcon{
+        margin-top: 1%;
+        max-width: 25%;
+    }
+}
