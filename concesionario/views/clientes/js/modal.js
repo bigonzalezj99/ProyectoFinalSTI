@@ -33,10 +33,8 @@ btnAddNew.onclick = function() {
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
                                 <select type="number" name="txt_idrol" id="txt_idrol" class="form-control" required>
-                                    <option disabled selected>--Seleccione un rol--</option>
-                                    <option value="1">WebMaster</option>
-                                    <option value="2">Administrador</option>
-                                    <option value="3">Cliente</option>
+                                    <option disabled selected>Seleccione una opción</option>
+                                    ${templateRoles}
                                 </select>
                             </div>
                         </div>
@@ -68,9 +66,13 @@ btnAddNew.onclick = function() {
         if (idTrClass.length > 0) {
             idTrClass.forEach($tr => {
                 let id = $tr.id.split('_')[1];
-                idUsuario = parseInt(id)+1;
+                if( parseInt(id) > parseInt(idUsuario) ){
+                    idUsuario = parseInt(id);
+                }
             });
-        } else {
+            idUsuario++;
+        }
+        else{
             idUsuario = 1;
         }
 
@@ -115,13 +117,13 @@ btnDelete.forEach($btn => {
 btnEdit.forEach($btn => {
     $btn.addEventListener('click',() => {
         modalForm.style.display = "block";
-
         let id = $btn.id.split('_')[1];
         let email = document.getElementById(`EMAIL_${id}`).textContent;
         let password = document.getElementById(`PASSWORD_${id}`).textContent;
         let idRol = document.getElementById(`ROL_${id}`).textContent;
         let modalBody = document.getElementById('modalBody');
-
+        let idTr = document.getElementById(`idTr_${id}`);
+        let intIdRol = idTr.className.split('_')[1];
         let template = `<div id="headerForm" class="headerForm">EDITAR REGISTRO</div>
                         <div id="formUsuarios" class="formUsuarios">
                             <div class="row" style="margin-top: 2%">
@@ -146,11 +148,9 @@ btnEdit.forEach($btn => {
                                     <label><strong>Rol:</strong></label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
-                                    <select type="number" name="txt_idrol" id="txt_idrol" class="form-control" required value="${idRol}">
-                                        <option disabled selected>--Seleccione un rol--</option>
-                                        <option value="1">WebMaster</option>
-                                        <option value="2">Administrador</option>
-                                        <option value="3">Cliente</option>
+                                    <select type="number" name="txt_idrol" id="txt_idrol" class="form-control" required>
+                                        <option value="${intIdRol}" disabled selected>${idRol}</option>
+                                        ${templateRoles}
                                     </select>
                                 </div>
                             </div>
@@ -176,9 +176,9 @@ btnEdit.forEach($btn => {
         btnSaveRegister.addEventListener('click',() => {
             let txtEmail = document.getElementById('txt_email');
             let txtPassword = document.getElementById('txt_password');
-            let txtIdRol = document.getElementById('txt_idrol');
+            let txtIdRol = document.getElementById('txt_idrol').value.split(' ')[0];
 
-            window.location.href="../../controllers/usuarios/insertUsuario.php?id="+id+"&email="+txtEmail.value+"&password="+txtPassword.value+"&idrol="+txtIdRol.value+"&update=Y";
+            window.location.href="../../controllers/usuarios/insertUsuario.php?id="+id+"&email="+txtEmail.value+"&password="+txtPassword.value+"&idrol="+txtIdRol+"&update=Y";
         });        
     });
 });

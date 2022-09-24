@@ -59,36 +59,47 @@
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-  }
+}
   
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60% !important; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .closeModal {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: right;
-  }
-  
-  .closeModal:hover,
-  .closeModal:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60% !important; /* Could be more or less, depending on screen size */
+}
 
-  .imgIcon{
-    max-width: 20%;
-  }
+/* The Close Button */
+.closeModal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.closeModal:hover,
+.closeModal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.imgIcon{
+  max-width: 20%;
+}
+
+.imgPreviewTable{
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 30px;
+}
+
+.imgPreviewForm{
+  width: 160px;
+  height: 160px;
+}
 
 @media only screen and (max-width: 1500px) {
     .imgIcon{
