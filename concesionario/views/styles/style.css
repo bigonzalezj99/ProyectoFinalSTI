@@ -101,6 +101,29 @@
   height: 160px;
 }
 
+.imgPreviewEstimate{
+    max-width: 50% !important;
+    max-height: 50% !important;
+}
+
+.imgViewCard{
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
+.divTableInfoFiltered{
+    margin-top: 2% !important;
+}
+
+.cardEstimate{
+    display: flex;
+    align-items: center;
+    background-color: #cc3030 !important;
+    color: #ffffff;
+    border: 5px solid #000000;
+    border-radius: 15px;
+}
+
 @media only screen and (max-width: 1500px) {
     .imgIcon{
         max-width: 30%;
@@ -123,5 +146,9 @@
     .imgIcon{
         margin-top: 1%;
         max-width: 25%;
+    }
+    
+    .divBtnSearch{
+        margin-top: 3% !important;
     }
 }

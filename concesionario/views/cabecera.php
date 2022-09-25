@@ -199,7 +199,7 @@
         if (!isset($_SESSION['usuario'])) 
             { 
                 /* nos envía a la siguiente dirección en el caso de no poseer autorización */
-                header("location:/proyectos/clinicaProyecto/index.php"); 
+                header("location: ../../index.php"); 
         }
     }
 

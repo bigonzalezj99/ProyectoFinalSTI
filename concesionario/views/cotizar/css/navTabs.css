@@ -1,0 +1,32 @@
+.nav-tabs>li>a {
+    border-radius: 5px 5px 1px 1px;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    margin: 1px;
+    padding: 5px 5px 1px 5px;
+    font-size: 18px !important;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    border-bottom: none;
+    font-size: 18px !important;
+    font-weight: bold;
+    color: #000000;
+    background-color: #cccccc !important;
+}
+
+.tab-pane{
+    margin-top: 2%;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #cccccc !important;
+}
+
+.titleTabPane{
+    margin-bottom: 2%;
+}
