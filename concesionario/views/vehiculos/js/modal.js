@@ -158,7 +158,8 @@ btnAddNew.onclick = function() {
                 idVehiculos = parseInt(id)+1;
             });
             idVehiculos++;
-        } else {
+        }
+        else {
             idVehiculos = 1;
         }
 

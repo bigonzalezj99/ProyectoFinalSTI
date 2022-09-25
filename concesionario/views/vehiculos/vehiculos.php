@@ -134,6 +134,7 @@
                     <table id="tableVehiculos" class="tableVehiculos">
                         <thead>
                             <tr>
+                                <th hidden>No.</th>
                                 <th>Descripción</th>
                                 <th>Precio</th>
                                 <th>Transmisión</th>
@@ -149,18 +150,23 @@
                             while ($fila = oci_fetch_array($selectBranchOffice, OCI_ASSOC + OCI_RETURN_NULLS)) {
                                 print "<tr id='idTr_".$fila["IDVEHICULOS"]."' class='idTrClass'>\n";
                                 $boolPrint = false;
+                                $hidden = "";
 
                                 foreach ($fila AS $key => $elemento) {
                                     if ($boolPrint === false) {
                                         $boolPrint = true;
-                                    } else {
-                                        if ($key === "IMAGEN") {
-                                            print "<td id='".$key."_".$fila["IDVEHICULOS"]."'>\n";
-                                            print "<img id='tdImgView_".$fila["IDVEHICULOS"]."' src='../../var/".$elemento."' alt='img' class='imgPreviewTable'/>";
-                                            print "</td>\n";
-                                        } else {
-                                            print "<td id='".$key."_".$fila["IDVEHICULOS"]."'>". ($elemento !== null ? htmlentities($elemento, ENT_QUOTES) : "") ."</td>\n";
-                                        }
+                                        $hidden = "hidden";
+                                    }
+                                    else{
+                                        $hidden = "";
+                                    }
+                                    if ($key === "IMAGEN") {
+                                        print "<td id='".$key."_".$fila["IDVEHICULOS"]."'>\n";
+                                        print "<img id='tdImgView_".$fila["IDVEHICULOS"]."' src='../../var/".$elemento."' alt='img' class='imgPreviewTable'/>";
+                                        print "</td>\n";
+                                    }
+                                    else{
+                                        print "<td id='".$key."_".$fila["IDVEHICULOS"]."' $hidden>". ($elemento !== null ? htmlentities($elemento, ENT_QUOTES) : "") ."</td>\n";
                                     }
                                 }
                                 print "<td>

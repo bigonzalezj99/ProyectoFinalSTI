@@ -149,6 +149,7 @@
             <div class="tab-content">
                 <div id="busqueda" class="tab-pane fade in active show">
                     <h3 class="titleTabPane">Búsqueda</h3>
+                    <i><p style ="color: #818080">Filtros opcionales:</p></i>
                     <div class="row">
                         <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
                             <label><strong>Precio desde:</strong></label>
@@ -247,10 +248,10 @@
                     </div>
                 </div>
                 <div id="cotizacion" class="tab-pane fade">
-                    <i><p style ="color: #818080">Puede arrastrar las tarjetas si desea reordenar</p></i>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <h3 class="titleTabPane">Cotización</h3>
+                            <i><p style ="color: #818080">Puede arrastrar las tarjetas si desea reordenar</p></i>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="text-align: right;">
                             <button id="btnPrintImage" name="btnPrintImage" class="btn btn-success">

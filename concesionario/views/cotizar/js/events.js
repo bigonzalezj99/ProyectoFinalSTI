@@ -109,7 +109,7 @@ btnSelect.forEach($btn=>{
             let image = document.getElementById(`tdImgView_${id}`).src;
             
             let divToCards = document.getElementById('divToCards');
-            let templateCard = `<div id='divCard_${id}' class="col-lg-4 col-md-4 col-sm-6 col-sx-12">
+            let templateCard = `<div id='divCard_${id}' class="col-lg-4 col-md-4 col-sm-6 col-sx-12" style='margin-bottom: 2%;'>
                                     <span id="removeCard_${id}" class="closeModal" style='color: #ffffff; position: relative; right: 7%;'>&times;</span>
                                     <div class="cardEstimate">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
