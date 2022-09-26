@@ -217,12 +217,14 @@
                                             foreach ($fila AS $key => $elemento) {
                                                 if ($boolPrint === false) {
                                                     $boolPrint = true;
-                                                } else {
+                                                }
+                                                else{
                                                     if ($key === "IMAGEN") {
                                                         print "<td id='".$key."_".$fila["IDVEHICULOS"]."'>\n";
                                                         print "<img id='tdImgView_".$fila["IDVEHICULOS"]."' src='../../var/".$elemento."' alt='img' class='imgPreviewTable'/>";
                                                         print "</td>\n";
-                                                    } else {
+                                                    }
+                                                    else{
                                                         print "<td id='".$key."_".$fila["IDVEHICULOS"]."'>". ($elemento !== null ? htmlentities($elemento, ENT_QUOTES) : "") ."</td>\n";
                                                     }
                                                 }
@@ -260,7 +262,26 @@
                             </button>
                         </div>
                     </div>
-                    <div id="divToCards" class="row divToCards" style="margin-bottom: 5%"></div>
+                    <div id="divToCards" class="row divToCards" style="margin-bottom: 5%">
+                        <div id="divTableEstimate" class="divTableEstimate" hidden>
+                            <table id="tableEstimate" class="tableEstimate">
+                                <thead id="tblTheadEstimate" class="tblTheadEstimate">
+                                    <tr>
+                                        <th class="thTHeadEstimate">Descripción</th>
+                                        <th class="thTHeadEstimate">Marca</th>
+                                        <th class="thTHeadEstimate">Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblTbodyEstimate"></tbody>
+                                <tfoot id="tblFootEstimate" class="tblFootEstimate">
+                                    <tr>
+                                        <td class="tdTfootEstimate" colspan="2">TOTAL</td>
+                                        <td class="tdTfootEstimate tPriceAlign" id="tdTotalEstimate">Q 0</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
 

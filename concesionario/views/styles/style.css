@@ -124,6 +124,43 @@
     border-radius: 15px;
 }
 
+.divTableEstimate{
+    display: flex;
+    justify-content: center;
+    margin-top: 3% !important;
+}
+
+.tblTheadEstimate{
+    background: #cc3030;
+    color: #ffffff;
+    border: 2px solid #000000;
+}
+
+.thTHeadEstimate{
+    border: 2px solid #000000;
+    height: 50px;
+    text-align: center;
+    width: 130px;
+}
+
+.tdNewElementEstimate{
+    font-weight: normal !important;
+    border: 2px solid #000000;
+}
+
+.tPriceAlign{
+    text-align: right !important;
+}
+
+.tblFootEstimate{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.tdTfootEstimate{
+    border: 2px solid #000000;
+}
+
 @media only screen and (max-width: 1500px) {
     .imgIcon{
         max-width: 30%;

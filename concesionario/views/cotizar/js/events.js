@@ -75,6 +75,8 @@ btnView.forEach($btn=>{
 
 btnSelect.forEach($btn=>{
     $btn.addEventListener('click',()=>{
+        let divTableEstimate = document.getElementById('divTableEstimate');
+        divTableEstimate.removeAttribute('hidden');
         let idBtn = $btn.id.split('_')[1];
         let divCard = document.getElementById(`divCard_${idBtn}`);
         if(divCard){
@@ -114,7 +116,7 @@ btnSelect.forEach($btn=>{
                                     <div class="cardEstimate">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <p> <strong>DESCRIPCIÓN:</strong> ${description} </p>
-                                            <p> <strong>PRECIO:</strong> ${price} </p>
+                                            <p> <strong>PRECIO:</strong> Q${price} </p>
                                             <p> <strong>TRANSMISIÓN:</strong> ${tramsmition} </p>
                                             <p> <strong>TIPO:</strong> ${type} </p>
                                             <p> <strong>MARCA:</strong> ${brand} </p>
@@ -125,11 +127,35 @@ btnSelect.forEach($btn=>{
                                     </div>
                                 </div>`;
             divToCards.insertAdjacentHTML('afterbegin',templateCard);
+            
+            let tblTbodyEstimate = document.getElementById('tblTbodyEstimate');
+            let templateTrElement = `<tr id='trNewElementEstimate_${id}' class='trNewElementEstimate'>
+                                        <td class='tdNewElementEstimate'>${description}</th>
+                                        <td class='tdNewElementEstimate'>${brand}</th>
+                                        <td class='tdNewElementEstimate tPriceAlign'>Q ${price}</th>
+                                    </tr>`;
+            tblTbodyEstimate.insertAdjacentHTML('beforeend',templateTrElement);
+
+            let tdTotalEstimate = document.getElementById('tdTotalEstimate').textContent.substr(2);
+            let newTdTotalEstimate = parseInt(tdTotalEstimate) + parseInt(price);
+            let strNewTdTotalEstimate = "Q " + newTdTotalEstimate
+            document.getElementById('tdTotalEstimate').textContent = strNewTdTotalEstimate;
 
             let removeCard = document.getElementById(`removeCard_${id}`);
             removeCard.addEventListener('click',()=>{
                 let id = removeCard.id.split('_')[1];
                 document.getElementById(`divCard_${id}`).remove();
+                let tdTotalEstimate = document.getElementById('tdTotalEstimate').textContent.substr(2);
+                let newTdTotalEstimate = parseInt(tdTotalEstimate) - parseInt(price);
+                let strNewTdTotalEstimate = "Q " + newTdTotalEstimate
+
+                if(newTdTotalEstimate === 0){
+                    let divTableEstimate = document.getElementById('divTableEstimate');
+                    divTableEstimate.setAttribute('hidden',true);
+                }
+
+                document.getElementById('tdTotalEstimate').textContent = strNewTdTotalEstimate;
+                document.getElementById(`trNewElementEstimate_${id}`).remove();
             });
 
             setTimeout(()=>{
