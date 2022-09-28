@@ -215,11 +215,11 @@ btnEdit.forEach($btn => {
         let brand = document.getElementById(`MARCA_${id}`).textContent;
         let state = document.getElementById(`ESTADO_${id}`).textContent;
         let modalBody = document.getElementById('modalBody');
-        let idTr = document.getElementById(`idTr_${id}`);
-        let intIdTransmicion = idTr.className.split('_')[1];
-        let intIdTipo = idTr.className.split('_')[1];
-        let intIdMarca = idTr.className.split('_')[1];
-        let intIdEstado = idTr.className.split('_')[1];
+        let intIdTransmicion = $btn.className.split('_')[1].split(' ')[0];
+        let intIdTipo = $btn.className.split('__')[1].split(' ')[0];
+        let intIdMarca = $btn.className.split('___')[1].split(' ')[0];
+        let intIdEstado = $btn.className.split('____')[1];
+
         let template = `<div id="headerForm" class="headerForm">EDITAR REGISTRO</div>
                         <div id="formVehiculos" class="formVehiculos">
 

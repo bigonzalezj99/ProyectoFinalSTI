@@ -15,7 +15,18 @@
         exit;
     } else {
         // Vehículos
-        $selectBranchOffice = oci_parse($db_connection, "SELECT v.idvehiculos, v.descripcion, v.precio, tp.transmicion, t.tipo, m.marca, e.estado, v.imagen
+        $selectBranchOffice = oci_parse($db_connection, "SELECT v.idvehiculos, 
+                                                                v.descripcion, 
+                                                                v.precio, 
+                                                                tp.idtipotransmicionvehiculo, 
+                                                                tp.transmicion, 
+                                                                t.idtipovehiculo, 
+                                                                t.tipo, 
+                                                                m.idmarcavehiculo, 
+                                                                m.marca, 
+                                                                e.idestadovehiculo, 
+                                                                e.estado, 
+                                                                v.imagen
                                                             FROM vehiculo v
                                                             INNER JOIN tipotransmicionvehiculo tp ON v.idtipotransmicionvehiculo = tp.idtipotransmicionvehiculo
                                                             INNER JOIN tipovehiculo t ON v.idtipovehiculo = t.idtipovehiculo
@@ -166,11 +177,13 @@
                                         print "</td>\n";
                                     }
                                     else{
-                                        print "<td id='".$key."_".$fila["IDVEHICULOS"]."' $hidden>". ($elemento !== null ? htmlentities($elemento, ENT_QUOTES) : "") ."</td>\n";
+                                        if($key !== "IDTIPOTRANSMICIONVEHICULO" && $key !== "IDTIPOVEHICULO" && $key !== "IDMARCAVEHICULO" && $key !== "IDESTADOVEHICULO"){
+                                            print "<td id='".$key."_".$fila["IDVEHICULOS"]."' $hidden>". ($elemento !== null ? htmlentities($elemento, ENT_QUOTES) : "") ."</td>\n";
+                                        }
                                     }
                                 }
                                 print "<td>
-                                        <button id='btnEdit_".$fila["IDVEHICULOS"]."' class='btn btn-primary btnEdit'>
+                                        <button id='btnEdit_".$fila["IDVEHICULOS"]."' class='btn btn-primary btnEdit idTransV_".$fila["IDTIPOTRANSMICIONVEHICULO"]." idTipoV__".$fila["IDTIPOVEHICULO"]." idMarcaV___".$fila["IDMARCAVEHICULO"]." idEstadoV____".$fila["IDESTADOVEHICULO"]."'>
                                             <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
                                         </button>
                                         <button id='btnDelete_".$fila["IDVEHICULOS"]."' class='btn btn-danger btnDelete'>
