@@ -228,7 +228,7 @@
                                 <i class="fa fa-car" aria-hidden="true"></i> Vehículos
                             </a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/cotizar/cotizar.php"><i class="fa fa-car" aria-hidden="true"></i> Cotizar vehículo y repuestos</a> </li>
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/cotizar/cotizar.php"><i class="fa fa-car" aria-hidden="true"></i> Cotizar vehículos</a> </li>
                             </ul>
                         </li>
                         <li>
@@ -303,7 +303,7 @@
                             <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/vehiculos/vehiculos.php"><i class="fa fa-car" aria-hidden="true"></i> Administración vehículos</a> </li>
                                 <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/repuestos/repuestos.php"><i class="fa fa-cogs" aria-hidden="true"></i> Administración de repuestos</a> </li>
-                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/cotizar/cotizar.php"><i class="fa fa-car" aria-hidden="true"></i> Cotizar vehículo y repuestos</a> </li>
+                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/cotizar/cotizar.php"><i class="fa fa-car" aria-hidden="true"></i> Cotizar vehículos</a> </li>
                             </ul>
                         </li>
                         <li>
