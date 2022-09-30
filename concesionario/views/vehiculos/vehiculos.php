@@ -171,12 +171,12 @@
                                     else{
                                         $hidden = "";
                                     }
+
                                     if ($key === "IMAGEN") {
                                         print "<td id='".$key."_".$fila["IDVEHICULOS"]."'>\n";
                                         print "<img id='tdImgView_".$fila["IDVEHICULOS"]."' src='../../var/".$elemento."' alt='img' class='imgPreviewTable'/>";
                                         print "</td>\n";
-                                    }
-                                    else{
+                                    } else {
                                         if($key !== "IDTIPOTRANSMICIONVEHICULO" && $key !== "IDTIPOVEHICULO" && $key !== "IDMARCAVEHICULO" && $key !== "IDESTADOVEHICULO"){
                                             print "<td id='".$key."_".$fila["IDVEHICULOS"]."' $hidden>". ($elemento !== null ? htmlentities($elemento, ENT_QUOTES) : "") ."</td>\n";
                                         }
