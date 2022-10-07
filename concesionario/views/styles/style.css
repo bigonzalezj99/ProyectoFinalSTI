@@ -161,6 +161,12 @@
     border: 2px solid #000000;
 }
 
+.employeeTable{
+    padding-right: 0;
+    padding-left: 1% !important;
+    width: 0 !important;
+}
+
 @media only screen and (max-width: 1500px) {
     .imgIcon{
         max-width: 30%;
