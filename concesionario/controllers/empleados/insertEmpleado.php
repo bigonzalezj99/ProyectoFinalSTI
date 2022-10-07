@@ -14,12 +14,12 @@
         $strDireccion = $_GET["direccion"];
         $strDpi = $_GET["dpi"];
         $strTelefono = $_GET["telefono"];
-        $strIdUsuario = $_GET["idusuario"];
-        $strIdCargo = $_GET["idcargo"];
         $strTotalVentas = $_GET["totalventas"];
         $isUpdate = $_GET["update"];
 
         if ($isUpdate === "N") {
+            $strIdUsuario = $_GET["idusuario"];
+            $strIdCargo = $_GET["idcargo"];
             $objInsertEmpleado = oci_parse($db_connection, "INSERT INTO CONCESIONARIA.EMPLEADO(IDEMPLEADO, NOMBRES, APELLIDOS, DIRECCION, DPI, TELEFONO, IDUSUARIO, IDCARGO, TOTALVENTAS) VALUES('".$strId."','".$strNombres."', '".$strApellidos."', '".$strDireccion."', '".$strDpi."', '".$strTelefono."', '".$strIdUsuario."', '".$strIdCargo."', '".$strTotalVentas."')");
         }
         elseif ($isUpdate === "Y") {

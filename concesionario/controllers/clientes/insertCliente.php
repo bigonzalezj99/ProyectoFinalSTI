@@ -14,10 +14,10 @@
         $strDireccion = $_GET["direccion"];
         $strNit = $_GET["nit"];
         $strTelefono = $_GET["telefono"];
-        $strIdUsuario = $_GET["idusuario"];
         $isUpdate = $_GET["update"];
 
         if ($isUpdate === "N") {
+            $strIdUsuario = $_GET["idusuario"];
             $objInsertCliente = oci_parse($db_connection, "INSERT INTO CONCESIONARIA.CLIENTE(IDCLIENTE, NOMBRES, APELLIDOS, DIRECCION, NIT, TELEFONO, IDUSUARIO) VALUES('".$strId."','".$strNombres."', '".$strApellidos."', '".$strDireccion."', '".$strNit."', '".$strTelefono."', '".$strIdUsuario."')");
         }
         elseif ($isUpdate === "Y") {
