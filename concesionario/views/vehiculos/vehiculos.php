@@ -125,6 +125,7 @@
         </head>
         <body class="bodyInicio">
             <?php include('../cabecera.php'); ?>
+            
             <div class="contPage">
             <div class="titlePage">
                 <h1>Administración de vehículos</h1>
