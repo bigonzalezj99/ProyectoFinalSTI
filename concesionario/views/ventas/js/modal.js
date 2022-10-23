@@ -1,6 +1,6 @@
-let modalForm = document.getElementById("modalForm");
-let btnAddNew = document.getElementById("btnAddNew");
-let spanClose = document.getElementById("close");
+//let modalForm = document.getElementById("modalForm");
+//let btnAddNew = document.getElementById("btnAddNew");
+//let spanClose = document.getElementById("close");
 
 btnAddNew.onclick = function() {
     modalForm.style.display = "block";
