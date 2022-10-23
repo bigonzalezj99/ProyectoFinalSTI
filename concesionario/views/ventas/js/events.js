@@ -183,7 +183,7 @@ btnAddNew.onclick = function() {
                                     <label><strong>Fecha:</strong></label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8">
-                                    <input type="text" name="txt_fecha" id="txt_fecha" class="form-control" required>
+                                    <input type="date" name="txt_fecha" id="txt_fecha" class="form-control" required>
                                 </div>
                             </div>
 

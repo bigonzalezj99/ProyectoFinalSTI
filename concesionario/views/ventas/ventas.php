@@ -326,7 +326,7 @@
                         <div class="text-justify marginBottom">
                             <br>
                             <div class="tableInfo">
-                                <table id="tableVentas" class="tableVentas">
+                                <table id="tableVentas" class="tableVentas" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th hidden>No.</th>

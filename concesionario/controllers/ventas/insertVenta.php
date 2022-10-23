@@ -14,7 +14,7 @@
         $isUpdate = $_GET["update"];
 
         if ($isUpdate === "N") {
-            $objInsertVenta = oci_parse($db_connection, "INSERT INTO CONCESIONARIA.VENTA(IDVENTA, FECHA, IDCLIENTE) VALUES('".$strId."','".$strFecha."', '".$strIdCliente."')");
+            $objInsertVenta = oci_parse($db_connection, "INSERT INTO CONCESIONARIA.VENTA(IDVENTA, FECHA, IDCLIENTE) VALUES('".$strId."', DATE'".$strFecha."', '".$strIdCliente."')");
         }
 
         $boolInsert = oci_execute($objInsertVenta);
