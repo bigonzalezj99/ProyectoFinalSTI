@@ -321,7 +321,6 @@
                             <i class="fa fa-book" aria-hidden="true"></i> Facturas
                             </a>
                             <ul class="collapse list-unstyled" id="pageSubmenu2">
-                                <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/compras/compras.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;<i class="fa fa-caret-left" aria-hidden="true"></i> Compras</a> </li>
                                 <li> <a href="/proyectos/ProyectoFinalSTI/concesionario/views/ventas/ventas.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;<i class="fa fa-caret-right" aria-hidden="true"></i> Ventas</a> </li>
                             </ul>
                         </li>

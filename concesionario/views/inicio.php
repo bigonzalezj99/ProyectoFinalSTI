@@ -125,7 +125,7 @@ if (!isset($_SESSION['administrador'])){
                 <!-------------------------------------------
                     REFERENCIA A LA PÁGINA DE COTIZACIONES 
                 -------------------------------------------->
-                <a href="#" style="text-decoration: none; color: black">
+                <a href="/proyectos/ProyectoFinalSTI/concesionario/views/cotizar/cotizar.php" style="text-decoration: none; color: black">
                     <div class="container" align="justify" style="background-color: #000000; width: 100%; border: solid; border-color: black;">
                         <div class="text-center">
                             <b><font size=5 face="Times New Roman" color="white">COTIZAR VEHICULO</font></b>
